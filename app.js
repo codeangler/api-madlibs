@@ -8,9 +8,7 @@ angular.module('MadLibApp', [])
 
 // #################### Persons function generate random persons
     
-    madCtrl.ranPersonIndex = Math.floor(Math.random()*38)
-    
-    madCtrl.person = function(i) {
+   madCtrl.person = function(i) {
     madCtrl.peopleArr = [];
       while ( i > 0){
         $http.get('http://swapi.co/api/people/' + i)
@@ -24,19 +22,15 @@ angular.module('MadLibApp', [])
          i--;
       }
     }
-    madCtrl.person(87)
-    setTimeout( function (){
-      console.log(madCtrl.peopleArr.length);
-    }
-    , 60000);
+    madCtrl.person(15)
+  
 // ####################  function generate random starship
-    madCtrl.ranShip = Math.floor(Math.random()*37)
     madCtrl.shipArr = [];
     madCtrl.ship = function(i) {
       while ( i > 0){
         $http.get('http://swapi.co/api/starships/' + i)
          .then(function(response){
-            madCtrl.space = madCtrl.shipArr.push(response.data.name);
+           madCtrl.space = madCtrl.shipArr.push(response.data.name);
           }, function(error) {
               // console.error(error)
           })
@@ -44,11 +38,9 @@ angular.module('MadLibApp', [])
          i--;
       }
     }
-    madCtrl.ship(37)
-    // madCtrl.ranShipIndex = Math.floor(Math.random()*
-      console.log(madCtrl.shipArr.length)
+    madCtrl.ship(15)
+  
     
-
 // ####################  function generate random planet
     // var ranPlanet = Math.floor(Math.random()*37)
     madCtrl.planetArr = [];
@@ -66,10 +58,17 @@ angular.module('MadLibApp', [])
       }
 
     }
-    madCtrl.planet(37)
-    setTimeout(function () {
-     
-      madCtrl.ranPlanetIndex = Math.floor(Math.random()*((madCtrl.peopleArr).length))
-      console.log(madCtrl.ranPlanetIndex )
-    }, 15000);
+    madCtrl.planet(15)
+
+//  Random Number Function
+    function randomNum() {
+      return Math.floor(Math.random()*8)
+    }
+    madCtrl.a = randomNum();
+    madCtrl.b = randomNum() ;
+    console.log(madCtrl.a);
+
+    madCtrl.reload = function () {
+      window.location.reload(true);
+    }
   }

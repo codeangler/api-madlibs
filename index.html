@@ -15,14 +15,40 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
       <script type="text/javascript" src="app.js"></script>
-<!--       <link rel="stylesheet" type="text/css" href="main.css">
- -->  </head>
+      <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
   <body ng-controller="MadLibController as madCtrl">
-  <div id="titles">
-
-    <div id="titlecontent">
-      A long long ago, in galaxy far away  <b>{{madCtrl.peopleArr[madCtrl.ranPersonIndex]}}</b> &amp; <b>{{madCtrl.peopleArr[madCtrl.ranPersonIndex ]}}</b> on a honeymoon trip to <b>{{madCtrl.planetArr[0]}}</b> upon their <b>{{madCtrl.shipArr[madCtrl.ranShipIndex]}}</b>.
-    </div> 
+  <div style="overflow:hidden; position:absolute; left:0; top:0; width:50px; height:25px;">
+  <div style="margin-top:-290px;">
   </div>
+  </div>
+  <button ng-click="madCtrl.reload()" class="btn btn-warning btn-lg arse-dagger">New Story</button>
+  <p id="start">A short time ago in a browser very, very close&hellip;</p>
+
+  <h1>STAR WARS<sub>API in Angular</sub></h1>
+
+<div id="titles">
+  <div id="titlecontent">
+
+    <p class="center">EPISODE CCXVI<br />
+      A NEW HOPE FOR Planets and Starships</p>
+
+    <p>It is a period of starship war.</p>
+
+    <p>A long time ago, in a galaxy far, far away...<b>{{madCtrl.peopleArr[madCtrl.a]}}</b> &amp; <b>{{madCtrl.peopleArr[madCtrl.b]}}</b> embark on a honeymoon trip to <b>{{madCtrl.planetArr[madCtrl.a]}}</b> upon their <b>{{madCtrl.shipArr[madCtrl.b]}}</b>.</p>
+
+    <p>10 million light years from <b>{{madCtrl.planetArr[madCtrl.a]}}</b>, <b>{{madCtrl.peopleArr[madCtrl.b]}}</b> &amp; <b>{{madCtrl.peopleArr[madCtrl.a]}}</b> encounter mechanical issues with the thrusters on their <b>{{madCtrl.shipArr[madCtrl.b]}}</b>.</p>
+
+    <p>Most marriages fail in the first seven years. After their short honeymoon that lasted just 12 parsecs, <b>{{madCtrl.peopleArr[madCtrl.a]}}</b> abandons ship and travels alone to <b>{{madCtrl.planetArr[madCtrl.b]}}</b>.</p>
+
+    <p class="center">"May the force be with you," <b>{{madCtrl.peopleArr[madCtrl.b]}}</b> whispers as <b>{{madCtrl.peopleArr[madCtrl.a]}}</b> flies away.</p>
+  
+    
+
+ 
+    </div>
+
+</div>
+
   </body>
 </html>
