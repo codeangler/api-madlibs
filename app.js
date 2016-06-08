@@ -6,26 +6,31 @@ angular.module('MadLibApp', [])
   function madCtrl($http) {
     var madCtrl = this;
 
-// ####################  function generate random persons
-    var ranPerson = Math.floor(Math.random()*87)
-    madCtrl.peopleArr = [];
+// #################### Persons function generate random persons
+    
+    madCtrl.ranPersonIndex = Math.floor(Math.random()*38)
+    
     madCtrl.person = function(i) {
+    madCtrl.peopleArr = [];
       while ( i > 0){
         $http.get('http://swapi.co/api/people/' + i)
          .then(function(response){
             madCtrl.space = madCtrl.peopleArr.push(response.data.name);
-                console.log(madCtrl.peopleArr)
 
           }, function(error) {
-              console.error(error)
+              // console.error(error)
           })
 
          i--;
       }
     }
     madCtrl.person(87)
+    setTimeout( function (){
+      console.log(madCtrl.peopleArr.length);
+    }
+    , 60000);
 // ####################  function generate random starship
-    var ranShip = Math.floor(Math.random()*37)
+    madCtrl.ranShip = Math.floor(Math.random()*37)
     madCtrl.shipArr = [];
     madCtrl.ship = function(i) {
       while ( i > 0){
@@ -33,13 +38,15 @@ angular.module('MadLibApp', [])
          .then(function(response){
             madCtrl.space = madCtrl.shipArr.push(response.data.name);
           }, function(error) {
-              console.error(error)
+              // console.error(error)
           })
 
          i--;
       }
     }
     madCtrl.ship(37)
+    // madCtrl.ranShipIndex = Math.floor(Math.random()*
+      console.log(madCtrl.shipArr.length)
     
 
 // ####################  function generate random planet
@@ -50,10 +57,9 @@ angular.module('MadLibApp', [])
         $http.get('http://swapi.co/api/planets/' + i)
          .then(function(response){
             madCtrl.space = madCtrl.planetArr.push(response.data.name);
-            console.log(madCtrl.planetArr)
 
           }, function(error) {
-              console.error(error);
+              // console.error(error);
           })
         i--;
 
@@ -61,5 +67,9 @@ angular.module('MadLibApp', [])
 
     }
     madCtrl.planet(37)
-    
+    setTimeout(function () {
+     
+      madCtrl.ranPlanetIndex = Math.floor(Math.random()*((madCtrl.peopleArr).length))
+      console.log(madCtrl.ranPlanetIndex )
+    }, 15000);
   }

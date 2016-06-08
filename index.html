@@ -15,11 +15,14 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
       <script type="text/javascript" src="app.js"></script>
-
-  </head>
+<!--       <link rel="stylesheet" type="text/css" href="main.css">
+ -->  </head>
   <body ng-controller="MadLibController as madCtrl">
-  <h1>{{ madCtrl.greeting }}</h1>
+  <div id="titles">
 
-  <div>A long long ago, in galaxy far away  {{madCtrl.peopleArr[0]}} &amp; {{madCtrl.peopleArr[1]}} on a honeymoon trip to <b>{{madCtrl.planetArr[0]}}</b> upon their {{madCtrl.shipArr[5]}}.</div> 
+    <div id="titlecontent">
+      A long long ago, in galaxy far away  <b>{{madCtrl.peopleArr[madCtrl.ranPersonIndex]}}</b> &amp; <b>{{madCtrl.peopleArr[madCtrl.ranPersonIndex ]}}</b> on a honeymoon trip to <b>{{madCtrl.planetArr[0]}}</b> upon their <b>{{madCtrl.shipArr[madCtrl.ranShipIndex]}}</b>.
+    </div> 
+  </div>
   </body>
 </html>
